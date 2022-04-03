@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { Loader } from "semantic-ui-react";
 import Item from '../../src/component/Item';
 
-const Post = ({item}) => {
+const Post = ({ item, name }) => {
     /*
         const router = useRouter();
         const { id } = router.query;
@@ -37,6 +37,7 @@ const Post = ({item}) => {
                 <title>{item.name}</title>
                 <meta name="description" content={item.description}></meta>
               </Head>
+              [{name} 환경]
               <Item item={item} />
             </>
           )}
@@ -47,14 +48,15 @@ const Post = ({item}) => {
 export default Post;
 
 export async function getServerSideProps(context) {
-    const id = context.params.id;
-    const apiUrl = `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`;
-    const res = await Axios.get(apiUrl);
-    const data = res.data;
-  
-    return {
-      props: {
-        item: data,
-      },
-    };
-  }
+  const id = context.params.id;
+  const apiUrl = `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`;
+  const res = await Axios.get(apiUrl);
+  const data = res.data;
+
+  return {
+    props: {
+      item: data,
+      name: process.env.name
+    },
+  };
+}

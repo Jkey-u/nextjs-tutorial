@@ -43,3 +43,14 @@
             - 퍼포먼스 떨어짐
             - 항상 최신 상태 유지
             - getServerSideProps
+
+<br><br>
+
+## 4. Environment Variables
+1. 웹 애플리케이션을 만들 때, 환경 변수가 필요한 경우
+    - 개발 모드(development mode)와 배포 모드(production mode)에 따라 다르게 코딩해야 할 때
+    - 개발 및 테스트 중에 실제 결제 구현을 하지 않도록 테스트 API 키를 사용하려고 할 때
+2. 사용법
+    - [nodeJS] process.env.변수명
+    - [browser] process.env.NEXT_PUBLIC_변수명
+    - ⚠ .env 파일을 변경했으면 NextJS 개발 서버를 다시 시작하자
