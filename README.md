@@ -31,17 +31,25 @@
 <br><br>
 
 2. 사전 렌더링 (Pre-rendering) 
-    - 언제 html 파일을 생성하는가?
-        - 정적 생성
-            - 프로젝트가 빌드하는 시점에 html파일들이 생성
+    - '언제' html 을 생성하는가?
+        - 정적 생성 (Static Generation)
+            - 프로젝트가 '빌드하는 시점'에 html파일들이 생성
             - 모든 요청에 재사용
             - 퍼포먼스 이유로, Next js 는 정적 생성을 권고
             - 정적 생성된 페이지들은 CDN에 캐시
+            - 활용
+                - 마케팅 페이지
+                - 블로그 게시물
+                - 제품 목록
+                - 도움말, 문서 등
             - getStaticProps / getStaticPaths
-        - Server Side Rendering (SSR, Dynamic Rendering)
-            - 매 요청마다 html 을 생성
+        - 서버 사이드 렌더링 (Server Side Rendering, SSR, Dynamic Rendering)
+            - '매 요청마다' html 을 생성
             - 퍼포먼스 떨어짐
-            - 항상 최신 상태 유지
+            - 활용
+                - 항상 최신 상태 유지
+                - 관리자 페이지
+                - 분석차트
             - getServerSideProps
 
 <br><br>
